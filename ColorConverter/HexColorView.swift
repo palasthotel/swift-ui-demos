@@ -15,9 +15,7 @@ struct HexColorView: View {
 	var body: some View {
 		
 		VStack(alignment: .leading, spacing: 4.0) {
-			Text("Hex")
-				.font(.largeTitle)
-				.fontWeight(.heavy)
+			Title(title: "Hex")
 
 			HStack {
 				Text("#")
@@ -35,19 +33,3 @@ struct HexColorView: View {
 }
 
 
-class HexFormatter: Formatter {
-	override func string(for obj: Any?) -> String? {
-		return obj as? String
-	}
-
-	override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?, for string: String, errorDescription error: AutoreleasingUnsafeMutablePointer<NSString?>?) -> Bool {
-
-		if string.count > 6 {
-			return false
-		}
-
-
-		obj?.pointee = string as AnyObject
-		return true
-	}
-}

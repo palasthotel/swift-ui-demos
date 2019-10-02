@@ -17,20 +17,16 @@ struct ColorSliderView: View {
 	var body: some View {
 		VStack(alignment: .leading, spacing: 4.0) {
 			HStack {
-				Text(title)
-					.font(.largeTitle)
-					.fontWeight(.heavy)
+				Title(title: title)
 
 				Spacer()
-				Text(NFormatter.twoDecimalPoints(from: colorValue / 255.0))
-					.font(.title)
-					.fontWeight(.bold)
-					.foregroundColor(.secondary)
+
+				Subtitle(subtitle: Formatter.twoDecimalPoints(from: colorValue / 255.0))
+
 				Divider()
-				Text(NFormatter.wholeNumber(from: colorValue))
-					.font(.title)
-					.fontWeight(.bold)
-					.foregroundColor(.secondary)
+
+				Subtitle(subtitle: Formatter.wholeNumber(from: colorValue))
+
 			}
 			
 			Slider(value: $colorValue, in: 0...254, step: 1.0)

@@ -8,7 +8,9 @@
 
 import Foundation
 
-struct NFormatter {
+
+
+struct Formatter {
 	static func wholeNumber(from float: Float) -> String {
 		let number = NSNumber(value: float)
 		let formatter = NumberFormatter()

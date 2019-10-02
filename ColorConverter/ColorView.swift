@@ -1,5 +1,5 @@
 //
-//  ColorSelectionView.swift
+//  ColorView.swift
 //  ColorConverter
 //
 //  Created by Benni on 24.09.19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ColorSelectionView: View {
+struct ColorView: View {
 
 	@Binding var hexValue: String
 
