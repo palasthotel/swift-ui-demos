@@ -20,7 +20,6 @@ struct ContentView: View {
 			ScrollView {
 				// The VStack houses the main interface components
 				VStack(spacing: 24.0) {
-					
 					HexColorView(hexString: $color.hexString)
 
 					Divider()

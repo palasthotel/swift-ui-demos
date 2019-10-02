@@ -25,7 +25,7 @@ struct Subtitle: View {
 	var body: some View {
 		Text(subtitle)
 			.font(.title)
-			.fontWeight(.bold)
+			.fontWeight(.medium)
 			.foregroundColor(.secondary)
 	}
 }
