@@ -9,17 +9,16 @@
 import SwiftUI
 
 struct ColorView: View {
-
-	@Binding var hexValue: String
-
+	@Binding var color: ColorData
+  
+    
     var body: some View {
 
-		Color(hexString: hexValue)
+        Color(red: color.red, green: color.green, blue: color.blue)
 			.clipShape(RoundedRectangle(cornerRadius: 16.0))
 			.shadow(color: .secondary, radius: 4.0, x: 0.0, y: 0.0)
 			.frame(minHeight: 200.0)
 
     }
 }
-
 

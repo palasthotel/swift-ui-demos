@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ColorSliderView: View {
 
-	@Binding var colorValue: Float
+	@Binding var colorValue: Double
 	var title: String
 
 	var body: some View {
@@ -29,8 +29,8 @@ struct ColorSliderView: View {
 				Subtitle(subtitle: Formatter.wholeNumber(from: colorValue))
 			}
 			
-			Slider(value: $colorValue, in: 0...255, step: 1.0)
+			Slider(value: $colorValue, in: 0...1)
 		}
 	}
-
 }
+

@@ -11,9 +11,9 @@ import SwiftUI
 
 struct ColorData {
 
-	var red: Float = Float.random(in: 0...254)
-	var green: Float = Float.random(in: 0...254)
-	var blue: Float = Float.random(in: 0...254)
+	var red = Double.random(in: 0...1)
+	var green = Double.random(in: 0...1)
+	var blue = Double.random(in: 0...1)
 
 	var hexString: String {
 		set {
@@ -32,9 +32,9 @@ struct ColorData {
 		scanner.scanHexInt64(&color)
 		let mask = 0x000000FF
 
-		red = Float(Int(color >> 16) & mask)
-		green = Float(Int(color >> 8) & mask)
-		blue = Float(Int(color) & mask)
+		red = Double(Int(color >> 16) & mask)
+		green = Double(Int(color >> 8) & mask)
+		blue = Double(Int(color) & mask)
 	}
 
 	private func validateHexString(_ hex: String) -> Bool {
@@ -49,18 +49,3 @@ struct ColorData {
 
 }
 
-
-extension Color {
-	init(hexString: String) {
-		let scanner = Scanner(string: hexString)
-		var color: UInt64 = 0
-		scanner.scanHexInt64(&color)
-		let mask = 0x000000FF
-
-		let red = Float(Int(color >> 16) & mask)
-		let green = Float(Int(color >> 8) & mask)
-		let blue = Float(Int(color) & mask)
-
-		self.init(red: Double(red / 255), green: Double(green / 255), blue: Double(blue / 255.0))
-	}
-}

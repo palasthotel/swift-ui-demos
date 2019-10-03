@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
 	// Model color data, defined as @State, so the view reloads everytime the color data is changed.
-	@State var color = ColorData()
+	@State var colorData = ColorData()
 
 	var body: some View {
 		// NavigationView for showing a nav bar and title
@@ -20,17 +20,17 @@ struct ContentView: View {
 			ScrollView {
 				// The VStack houses the main interface components
 				VStack(spacing: 24.0) {
-					HexColorView(hexString: $color.hexString)
+					HexColorView(hexString: $colorData.hexString)
 
 					Divider()
 
-					ColorSliderView(colorValue: $color.red, title: "Rot").accentColor(.red)
-					ColorSliderView(colorValue: $color.green, title: "Grün").accentColor(.green)
-					ColorSliderView(colorValue: $color.blue, title: "Blau").accentColor(.blue)
+					ColorSliderView(colorValue: $colorData.red, title: "Rot").accentColor(.red)
+					ColorSliderView(colorValue: $colorData.green, title: "Grün").accentColor(.green)
+					ColorSliderView(colorValue: $colorData.blue, title: "Blau").accentColor(.blue)
 
 					Divider()
 
-					ColorView(hexValue: $color.hexString)
+                    ColorView(color: $colorData)
 				}
 				.padding()
 				.navigationBarTitle("Color Converter", displayMode: .inline)
