@@ -17,8 +17,17 @@ struct Title: View {
 			.font(.largeTitle)
 			.fontWeight(.heavy)
 			.foregroundColor(.primary)
+			.multilineTextAlignment(.trailing)
 	}
 }
+
+struct Title_Previews: PreviewProvider {
+	
+    static var previews: some View {
+		Title(title: "Title")
+    }
+}
+
 
 struct Subtitle: View {
 	let subtitle: String
@@ -28,4 +37,11 @@ struct Subtitle: View {
 			.fontWeight(.medium)
 			.foregroundColor(.secondary)
 	}
+}
+
+struct Subtitle_Previews: PreviewProvider {
+	
+    static var previews: some View {
+		Subtitle(subtitle: "Subtitle")
+    }
 }

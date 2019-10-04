@@ -23,9 +23,6 @@ struct ColorSliderView: View {
 				Spacer()
 
 				Subtitle(subtitle: Formatter.twoDecimalPoints(from: colorValue / 255.0))
-
-				Divider()
-
 				Subtitle(subtitle: Formatter.wholeNumber(from: colorValue))
 			}
 			
@@ -34,3 +31,10 @@ struct ColorSliderView: View {
 	}
 }
 
+
+struct ColorSliderView_Previews: PreviewProvider {
+	
+    static var previews: some View {
+		ColorSliderView(colorValue: .constant(0.3), title: "TEST")
+    }
+}

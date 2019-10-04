@@ -20,7 +20,7 @@ struct ColorData {
 			updateRGBValues(from: newValue)
 		}
 		get {
-			String(format:"%02X", Int(red)) + String(format:"%02X", Int(green)) + String(format:"%02X", Int(blue))
+			String(format:"%02X", Int(red * 255.0)) + String(format:"%02X", Int(green * 255.0)) + String(format:"%02X", Int(blue * 255.0))
 		}
 	}
 

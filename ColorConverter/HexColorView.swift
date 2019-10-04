@@ -33,3 +33,10 @@ struct HexColorView: View {
 }
 
 
+struct HexColorView_Previews: PreviewProvider {
+	
+    static var previews: some View {
+		HexColorView(hexString: .constant(""))
+    }
+}
+

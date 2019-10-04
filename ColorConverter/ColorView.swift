@@ -22,3 +22,11 @@ struct ColorView: View {
     }
 }
 
+
+
+struct ColorView_Previews: PreviewProvider {
+	
+    static var previews: some View {
+		ColorView(color: .constant(ColorData()))
+    }
+}
